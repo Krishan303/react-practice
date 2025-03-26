@@ -56,19 +56,19 @@ const ShoppingComp = () => {
           className="p-2 border border-black mt-10 mb-1"
           onChange={(e) => handleTextChange(e)}
         />
-        <div className="border border-black p-2 flex flex-col">
+        {input && <div className="border border-black p-2 flex flex-col">
           {apiResponse.map((list) => {
             return (
               <div className="flex justify-between">
-                <div onClick={() => handleTickClick(list)}>✅</div>
+                <div className="cursor-pointer" onClick={() => handleTickClick(list)}>✅</div>
                 <div className={`${!isTick[list] ? "" : "line-through"}`}>
                   {list}
                 </div>
-                <div onClick={() => handleCrossClick(list)}>❌</div>
+                <div className="cursor-pointer" onClick={() => handleCrossClick(list)}>❌</div>
               </div>
             );
           })}
-        </div>
+        </div>}
       </div>
     </div>
   );
