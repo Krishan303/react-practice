@@ -14,7 +14,6 @@ const Counter = () => {
     const copyHistory = [...history];
     copyHistory.unshift(obj);
     setHistory(copyHistory);
-    console.log(obj);
   };
 
   const handleClick = (buttonValue) => {
